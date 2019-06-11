@@ -1,0 +1,25 @@
+<div
+  class="image-wrapper"
+  role="img"
+  [attr.aria-label]="image.alt"
+  [style.top.px]="clickedImageCoords.top"
+  [style.left.px]="clickedImageCoords.left"
+  [style.width.px]="clickedImageCoords.width"
+  [style.height.px]="clickedImageCoords.height"
+
+  [@animWrapper]="wrapperState"
+  (@animWrapper.done)="this.fitImage = 'contain'">
+  <img
+    class="image"
+    [attr.alt]="image.alt"
+    [style.object-fit]="fitImage"
+    [src]="image.src"
+
+    [@imageState]="move"
+    (@imageState.done)="showNewImage()"
+
+    (swiperight)="animateCurrentImage('right')"
+    (swipeleft)="animateCurrentImage('left')">
+</div>
+
+

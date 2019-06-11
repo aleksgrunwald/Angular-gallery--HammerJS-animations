@@ -1,0 +1,35 @@
+//@import '~@angular/material/prebuilt-themes/deeppurple-amber.css'
+@import '~@angular/material/theming';
+
+
+// Defining my own Material Design palette
+@include mat-core();
+
+$primary: mat-palette($mat-blue-grey);
+$accent: mat-palette($mat-blue-gray);
+$warn: mat-palette($mat-pink);
+
+$gallery-theme: mat-light-theme(
+  $primary,
+  $accent,
+  $warn
+);
+
+@include angular-material-theme($gallery-theme);
+
+
+
+html, body {
+  margin: 0;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.material-icons {
+  padding: 0 10px;
+}
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}

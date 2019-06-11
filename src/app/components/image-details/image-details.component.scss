@@ -1,0 +1,36 @@
+:host {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 100;
+
+  .image-wrapper {
+    position: absolute;
+    //top: from variable
+    //left: from variable
+    //width: from variable
+    //height: from variable
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+.show-wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.show-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+

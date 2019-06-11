@@ -1,0 +1,68 @@
+$columns: 2;
+$gutterSize: 16px;
+
+:host {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 56px;
+
+
+  .favourites-toggle {
+    margin: 5vw 0;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    z-index: -5;
+
+    &__image {
+      width: calc(100% / #{$columns});
+      float: left;
+      position: relative;
+      padding-bottom: calc(100% / #{$columns});
+
+      &__content {
+        width: calc(100% - #{$gutterSize});
+        height: calc(100% - #{$gutterSize});
+        margin: #{$gutterSize / 2};
+        position: absolute;
+
+        & button {
+          position: absolute;
+          z-index: 2;
+          background: none;
+          border: none;
+        }
+
+        .image-wrapper {
+          width: 100%;
+          height: 100%;
+
+          & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -5;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+// Not sure if it is a good practise.
+// Done that for the temporary visual effect, to disable blue border around clicked image.
+*:focus {
+
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,29 @@
+<div class="favourites-toggle">
+  <button mat-icon-button [color]="onlyFavourites ? 'warn' : 'gray'">
+    <mat-icon aria-label="icon-button with a heart icon">favorite</mat-icon>
+  </button>
+  <mat-slide-toggle
+    [(ngModel)]="onlyFavourites"
+    class="example-margin">
+  </mat-slide-toggle>
+</div>
+<section class="images">
+  <div class="images__image"
+    *ngFor="let image of (images | favouriteFilter:onlyFavourites);">
+
+    <div class="images__image__content">
+      <button mat-icon-button [color]="image.favourite ? 'warn' : 'gray'">
+        <mat-icon aria-label="icon-button with a heart icon">favorite</mat-icon>
+      </button>
+      <div class="image-wrapper">
+        <img
+          [src]="image.src"
+          [id]="image.id"
+          alt="photo"
+          [routerLink]="['/imagedetails', image.id]"
+        (click)="getImageCoordinatesHideImage($event)">
+      </div>
+      </div>
+
+  </div>
+</section>

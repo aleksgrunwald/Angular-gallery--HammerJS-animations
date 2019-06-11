@@ -1,0 +1,26 @@
+<!--The gallery page toolbar-->
+<mat-toolbar color="secondary" role="heading" *ngIf="currentRoute == '/gallery'">
+  <h1>{{ pageTitle }}</h1>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+
+<!--ImageDetails page toolbar-->
+<mat-toolbar color="secondary" role="heading" *ngIf="currentRoute && currentRoute.includes('imagedetails')">
+  <i (click)="goBack()" class="material-icons">
+    arrow_back
+  </i>
+  <h1>{{ pageTitle }}</h1>
+  <span class="example-spacer"></span>
+  <i class="material-icons">
+    share
+  </i>
+  <i class="material-icons">
+    crop_free
+  </i>
+  <i class="material-icons">
+    edit
+  </i>
+  <i class="material-icons">
+    more_vert
+  </i>
+</mat-toolbar>
